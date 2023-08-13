@@ -1,0 +1,50 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.details {
+  width: 80%;
+  height: 100vh;
+  margin-top: 3%;
+}
+
+.button{
+  border: none;
+  padding: 1rem;
+}
+
+.button span{
+  margin-left: 10px;
+}
+
+.detailSection {
+}
+
+.detailCard {
+  display: flex;
+  align-items: center;
+}
+
+.detailImg {
+  width: 700px;
+}
+.detailImg img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.dataDetail{
+  display: flex;
+}
+
+.data{
+  margin: 10% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.data:nth-child(2){
+  margin-left: 10%;
+}

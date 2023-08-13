@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import data from "../../util/data.json";
 import Card from "../../component/card/Card";
 import Pagination from "../../component/pagitation/Pagination";
+import "./style.css"
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -28,8 +29,8 @@ const Home = () => {
 
   return (
     <div>
-      <section>
-        <div>
+      <section className="home">
+        <div className="filterSection">
           <div>
             <input
               type="text"
@@ -38,7 +39,7 @@ const Home = () => {
               placeholder="Search for a country..."
             />
           </div>
-          <div>
+          <div className="custom-select">
             <select onChange={handleRegionChange}>
               <option value="">All Regions</option>
               {uniqueRegions.map((region, index) => (
@@ -49,18 +50,18 @@ const Home = () => {
             </select>
           </div>
         </div>
-        <div>
+        <div className="cards">
           <Card
             filteredData={filteredData}
             currentPage={currentPage}
             itemsPerPage={itemsPerPage}
           />
+        </div>
           <Pagination
             currentPage={currentPage}
             totalPages={Math.ceil(filteredData.length / itemsPerPage)}
             onPageChange={setCurrentPage}
           />
-        </div>
       </section>
     </div>
   );

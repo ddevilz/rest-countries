@@ -1,4 +1,31 @@
 .nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    box-shadow: 0 10px 10px var(--dark-effect);
+}
+
+.btn{
+    display: block;
+}
+
+.btn span{
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 640px) {
+    .nav{
+        padding-right: 1rem;     
+        padding-left: 1rem;
+    }
+    .h-text {
+        font-size: 1.3rem;
+    }
+    .btn span{
+        font-size: 0.89rem;
+        margin-left: 5px;
+    }
 }

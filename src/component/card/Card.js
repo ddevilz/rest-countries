@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./style.css"
 
 const Card = ({ filteredData, currentPage, itemsPerPage }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -8,14 +9,14 @@ const Card = ({ filteredData, currentPage, itemsPerPage }) => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <>
       {visibleData &&
         visibleData.map((data, index) => (
-          <div key={index} onClick={() => navigate(`/details/${data.name}`)}>
-            <div>
-              <img src={data.flags.png} alt={data.name} />
+          <div className="card" key={index} onClick={() => navigate(`/details/${data.name}`)}>
+            <div className="cardImg">
+              <img src={data.flags.svg} alt={data.name} />
             </div>
-            <div>
+            <div className="cardText">
               <h3>{data.name}</h3>
               <p>Population: {data.population}</p>
               <p>Region: {data.region}</p>
@@ -23,7 +24,7 @@ const Card = ({ filteredData, currentPage, itemsPerPage }) => {
             </div>
           </div>
         ))}
-    </div>
+    </>
   );
 };
 
