@@ -19,11 +19,15 @@
 }
 
 .detailSection {
+  display: flex;
+  justify-content: center;
 }
 
 .detailCard {
   display: flex;
   align-items: center;
+  margin-top: 5%;
+  gap: 60px;
 }
 
 .detailImg {
@@ -45,6 +49,22 @@
   gap: 4px;
 }
 
-.data:nth-child(2){
-  margin-left: 10%;
+.data span{
+  display: block;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--dark-effect);
+}
+
+.data:nth-child(1){
+  margin-right: 10%;
+}
+
+@media screen and (max-width: 940px) {
+  .detailCard{
+    flex-direction: column;
+  }
+
+  .detailImg {
+    width: 300px;
+  }
 }
